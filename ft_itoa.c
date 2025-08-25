@@ -34,7 +34,7 @@ char	*ft_itoa(int n)
 	size_t	sign;
 	size_t	digits;
 
-	nb =  (long)n;
+	nb = (long)n;
 	digits = num_digits(n);
 	sign = 0;
 	if (nb < 0)
