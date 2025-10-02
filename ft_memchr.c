@@ -27,3 +27,13 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	}
 	return (NULL);
 }
+
+/* int	main(void)
+{
+	char	*search;
+	char	*found;
+
+	search = "hola";
+	found = ft_memchr(search, 'l', 4);
+	printf("%s", found);
+} */

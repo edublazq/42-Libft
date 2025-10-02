@@ -18,3 +18,10 @@ int	ft_isdigit(int c)
 		return (1);
 	return (0);
 }
+
+/* int	main(int argc, char **argv)
+{
+	if (argc == 2)
+		ft_putnbr_fd(ft_isdigit(argv[1][0]), 1);
+	return (0);
+} */

@@ -38,3 +38,16 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	}
 	return (dest);
 }
+
+/* int	main(void)
+{
+	char	*moved;
+	char	*first;
+
+	moved = malloc(20);
+	first = "123456789";
+	ft_memmove(moved, first, 10);
+	printf("%s", moved);
+	free(moved);
+	return (0);
+} */

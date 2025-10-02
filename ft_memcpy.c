@@ -32,3 +32,18 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	}
 	return (NULL);
 }
+
+/* int	main(void)
+{
+	char	*src;
+	char	*dest;
+
+	src = "hola mundo";
+	dest = malloc(ft_strlen(src) + 1);
+	if (!dest)
+		return (-1);
+	ft_memcpy(dest, src, ft_strlen(src));
+	printf("%s", dest);
+	free(dest);
+	return (0);
+} */

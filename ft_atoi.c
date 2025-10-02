@@ -31,7 +31,7 @@ int	ft_atoi(const char *nptr)
 	num = 0;
 	while (ft_isspace(nptr[i]))
 		i++;
-	while (nptr[i] == '+' || nptr[i] == '-')
+	if (nptr[i] == '-' || nptr[i] == '+')
 	{
 		if (nptr[i] == '-')
 			neg = -neg;
@@ -44,3 +44,16 @@ int	ft_atoi(const char *nptr)
 	}
 	return (num * neg);
 }
+
+/* int main(int argc, char **argv)
+{
+	ft_putnbr_fd(ft_atoi("-2147483648"), 1);
+	ft_putchar_fd('\n', 1);
+	ft_putnbr_fd(ft_atoi("2147483647"), 1);
+	ft_putchar_fd('\n', 1);
+	ft_putnbr_fd(ft_atoi("0"), 1);
+	ft_putchar_fd('\n', 1);
+	if (argc == 2)
+		ft_putnbr_fd(ft_atoi(argv[1]), 1);
+	return (0);
+} */

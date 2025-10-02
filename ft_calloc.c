@@ -18,7 +18,7 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	size_t	i;
 
 	i = 0;
-	if (size != 0 && nmemb >= __SIZE_MAX__ / size)
+	if (size != 0 && nmemb >= __INT_MAX__ / size)
 		return (NULL);
 	ptr = malloc(nmemb * size);
 	if (!ptr)
@@ -30,3 +30,20 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	}
 	return (ptr);
 }
+
+/* #include <stdio.h>
+
+int	main(void)
+{
+	char	*hola;
+
+	hola = ft_calloc(5, sizeof(char));
+	hola[0] = 'h';
+	hola[1] = 'h';
+	hola[2] = 'h';
+	hola[3] = 'h';
+	
+	printf("%s\n", hola);
+	free(hola);
+	return (0);
+} */

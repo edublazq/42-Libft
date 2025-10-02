@@ -1,48 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bamberger12 <marvin@42.fr>                 +#+  +:+       +#+        */
+/*   By: edblazqu <edblazqu@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/10 19:39:45 by bamberger12       #+#    #+#             */
-/*   Updated: 2025/08/10 19:39:46 by bamberger12      ###   ########.fr       */
+/*   Created: 2025/10/01 11:15:56 by edblazqu          #+#    #+#             */
+/*   Updated: 2025/10/01 11:15:58 by edblazqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_bzero(void *s, size_t n)
+void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
 	size_t	i;
 
 	i = 0;
-	while (i < n)
+	while (s[i])
 	{
-		((unsigned char *)s)[i] = 0;
+		f(i, &s[i]);
 		i++;
 	}
 }
 
-/* #include <stdio.h>
-
-int	main(void)
+/* static void	function(unsigned int idx, char *string)
 {
-	char	f[10];
-	int		i;
+	printf("Pasada:%d %s\n", idx, string);
+}
 
-	i = 0;
-	while (i < 10)
-	{
-		f[i] = 'x';
-		i++;
-	}
-	ft_bzero(f+3, 10);
-	i = 0;
-	while (i < 10)
-	{
-		printf("%d\n", f[i]);
-		i++;
-	}
+int	main(int ac, char **av)
+{
+	if (ac == 2)
+		ft_striteri(av[1], function);
 	return (0);
 } */

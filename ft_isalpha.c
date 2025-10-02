@@ -21,3 +21,10 @@ int	ft_isalpha(int c)
 	else
 		return (0);
 }
+
+/* int	main(int argc, char **argv)
+{
+	if (argc == 2)
+		ft_putnbr_fd(ft_isalpha(argv[1][0]), 1);
+	return (0);
+} */

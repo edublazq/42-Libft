@@ -28,14 +28,14 @@ ft_isprint.c \
 ft_memcpy.c \
 ft_split.c \
 ft_strlcpy.c \
-ft_memccpy.c \
 ft_strmapi.c \
 ft_memcmp.c \
 ft_strtrim.c \
 ft_strlcat.c \
 ft_strnstr.c \
 ft_substr.c \
-ft_strncmp.c
+ft_strncmp.c \
+ft_striteri.c
 BONUS_SRCS = ft_lstnew_bonus.c \
 ft_lstadd_front_bonus.c \
 ft_lstsize_bonus.c \
@@ -54,7 +54,7 @@ $(NAME): $(OBJS)
 	@echo "Compiling libft 📚..."
 	@ar rcs $(NAME) $(OBJS)
 all: $(NAME)
-bonus: $(OBJS) $(BONUS_OBJS)
+bonus: $(BONUS_OBJS)
 	@echo "🌟 Compiling bonus libft 🌟"
 	@ar rcs $(NAME) $(BONUS_OBJS)
 clean:
@@ -66,4 +66,4 @@ fclean: clean
 so: $(OBJS)
 	$(CC) -shared -o libft.so $(OBJS) $(BONUS_OBJS)
 re: fclean all
-.PHONY: all clean fclean re so
+.PHONY: all clean fclean re so bonus

@@ -55,3 +55,8 @@ char	*ft_itoa(int n)
 		ascii[0] = '-';
 	return (ascii);
 }
+
+/* int	main(void)
+{
+	ft_putstr_fd(ft_itoa(-2147483648), 1);
+} */

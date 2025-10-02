@@ -45,14 +45,18 @@ static	size_t	word_length(const char *s, char c)
 	return (length);
 }
 
-static	char	*skip_c(char *s, char c)
+static	void	*free_all(char **split, size_t	idx)
 {
-	int		i;
+	size_t	i;
 
 	i = 0;
-	while (s[i] == c)
+	while (i < idx)
+	{
+		free(split[i]);
 		i++;
-	return (&s[i]);
+	}
+	free(split);
+	return (NULL);
 }
 
 static char	*fill_string(char *s, char *to_fill, char c)
@@ -86,13 +90,36 @@ char	**ft_split(char const *s, char c)
 		return (NULL);
 	while (i < limits)
 	{
-		ptr = skip_c(ptr, c);
+		while (*ptr == c)
+			ptr++;
 		split[i] = (char *)malloc(word_length(ptr, c) + 1);
 		if (!split[i])
-			return (NULL);
+			return ((char **)free_all(split, i));
 		ptr = fill_string(ptr, split[i], c);
 		i++;
 	}
 	split[i] = NULL;
 	return (split);
 }
+
+/* int	main(int argc, char **argv)
+{
+	char	**split;
+	int		limit;
+
+	if (argc == 2)
+	{
+		printf("%d", (int)ft_strlen(argv[1]));
+		split = ft_split(argv[1], ' ');
+		for (int i = 0; split[i]; i++)
+		{
+			printf("Split nº %d -> %s\n", i, split[i]);
+			limit = i;
+		}
+		printf("NULL -> %s", split[limit + 1]);
+		for (int i = 0; split[i]; i++)
+			free(split[i]);
+		free(split);
+	}
+	return (0);
+} */
