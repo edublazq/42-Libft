@@ -35,7 +35,9 @@ ft_strlcat.c \
 ft_strnstr.c \
 ft_substr.c \
 ft_strncmp.c \
-ft_striteri.c
+ft_striteri.c \
+ft_printf_utils.c \
+ft_printf.c
 BONUS_SRCS = ft_lstnew_bonus.c \
 ft_lstadd_front_bonus.c \
 ft_lstsize_bonus.c \
