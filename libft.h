@@ -18,6 +18,7 @@
 # include <stdio.h>
 # include <stdarg.h>
 # include <stdint.h>
+# include "ft_printf.h"
 
 void	*ft_memset(void *ptr, int c, size_t n);
 size_t	ft_strlen(const char *s);
@@ -53,10 +54,6 @@ char	*ft_strnstr(const char *big, const char *little, size_t len);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 void	*ft_calloc(size_t nmemb, size_t size);
 void	ft_striteri(char *s, void (*f)(unsigned int, char*));
-void	ft_print_unsigned(unsigned int nb);
-void	ft_print_to_base(unsigned int nb, char *base);
-void	ft_print_ptr(void *ptr);
-int		ft_printf(const char *str, ...);
 
 typedef struct s_list
 {
